@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>ADD HOSPITAL </title>
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+          <a class="navbar-brand" href="#" style="color:aliceblue;">AdminPanel</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+             
+            </ul>
+          </div>
+        </nav>
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-10">
+                 <h1 class="headingHospitalAdd">ADD HOSPITAL </h1>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-1">
+              </div>
+              <div class="col-10">
+    <form>
+      <div class="form-group">
+        <label for="hospitalName" >Hospital Name</label>
+        <input  type="name" class="form-control" name="hospitalName" [(ngModel)]="hospitalName" placeholder="Enter Hospital Name">
+      </div>
+      
+      <div class="form-group">
+        <label for="hospitalAddress">Hospital Address</label>
+        <input  type="name" class="form-control" name="hospitalAddress" [(ngModel)]="hospitalAddress" placeholder="Hospital Address">
+      </div>
+      
+      <div class="form-group">
+        <label for="hospitalSpeciality">Select Hospital Speciality</label>
+        <select  class="form-control" id="hospitalSpeciality" [(ngModel)]="hospitalSpeciality" name="hospitalSpeciality">
+          <option value = "skin">Skin</option>
+          <option value = "cold">Cold</option>
+          <option value="fever">Fever</option>
+          <option value="bloodpressure">Blood Pressure</option>
+        </select>
+      </div>
+
+       
+      <div class="form-group">
+        <label for="ageGroup">Select Hospital Age Group</label>
+        <select  class="form-control" id="agegroup" [(ngModel)]="ageGroup" name="ageGroup">
+          <option value = "young">Young</option>
+          <option value = "old">Old</option>
+          
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="hospitalAddress">Hospital Phone Number</label>
+        <input  type="name" class="form-control" placeholder="Hospital Phone Number" name="hospitalPhoneNumber" [(ngModel)]="hospitalPhoneNumber">
+      </div>
+
+      <button type="submit" class="btn btn-primary" (click)="addHospital()">Submit</button>
+    </form>
+    </div>
+    </div>
+    </div>
+  </body>
+</html>
