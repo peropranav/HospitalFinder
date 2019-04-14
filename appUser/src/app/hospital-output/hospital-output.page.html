@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="primary" style="height:70px;">
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="tabs/home" style="margin-top: 20px;text-align: center"></ion-back-button>
+        </ion-buttons>
+    <ion-title style="margin-top: 20px; text-align: center">Hospitals Near You</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list padding *ngFor="let hospital of hospitalsArray">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{hospital.disease_cure |  uppercase}} SPECIAL</ion-card-subtitle>
+      <ion-card-title>{{hospital.name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{hospital.formatted_address}}
+      <br>
+<br>
+      <h6 >Best Rated For <span style="color:red">{{hospital.ageGroup | uppercase}} </span> Generation</h6>
+      <ion-item-divider>
+          <ion-label>
+            Get in Touch
+          </ion-label>
+        </ion-item-divider>
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+                  <ion-icon name="call" size="large" (click)="onClickCall(hospital.phoneNumber)"></ion-icon>
+                  <br>
+                  <span>{{hospital.phoneNumber}}</span>
+              </ion-col>
+            
+              <ion-col>
+                  <ion-icon  name="navigate" size="large" (click)="navigateToHospital(hospital.location.coordinates)"></ion-icon>
+                  <br>
+                  <span>Directions</span>
+              </ion-col>
+
+              <ion-col>
+                  <ion-icon name="share" size="large" (click)="shareWhatsApp(hospital.name, hospital.formatted_address, hospital.phoneNumber)"></ion-icon>
+                  <br> 
+                  <span>Share Via Whatsapp</span>
+              </ion-col>
+            </ion-row>
+</ion-grid>          
+    </ion-card-content>
+  </ion-card>
+</ion-list>
+</ion-content>

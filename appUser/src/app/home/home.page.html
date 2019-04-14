@@ -1,0 +1,51 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar color="primary" style="height:70px;">
+      <br>
+      <ion-title style="text-align: center;font-family:sans-serif" >SEARCH HOSPITALS</ion-title>
+      
+    </ion-toolbar>
+   
+  </ion-header>
+
+  <ion-content padding>
+    <ion-list>
+      <ion-list-header>Customize Your Search</ion-list-header>
+    
+      <ion-item>
+        <ion-label>Age Group</ion-label>
+        <ion-select multiple="false" okText="Okay!" cancelText="Clear!" (ionCancel)="onCancelageGroup()" [(ngModel)]="ageGroup">
+
+          <ion-select-option value="young">Young</ion-select-option>
+          <ion-select-option value="old">Old</ion-select-option>
+        </ion-select>
+      </ion-item>
+    <br>
+      <ion-item>
+        <ion-label >Disease</ion-label>
+        <ion-select multiple="false" okText="Okay!" cancelText="Clear!" (ionCancel)="onCanceldisease_cure()" [(ngModel)]="disease_cure">
+          <ion-select-option value="cold">Cold</ion-select-option>
+          <ion-select-option value="skin">Skin</ion-select-option>
+          <ion-select-option value="fever">Fever</ion-select-option>
+          <ion-select-option value="blood">Blood Pressure</ion-select-option>
+        </ion-select>
+      </ion-item>
+<br>
+
+      <ion-item>
+          <ion-label>Distance</ion-label>
+          <ion-range min="1000" max="15000" color="secondary" pin=true [(ngModel)]="maxDist">
+            <ion-label slot="start">1000</ion-label>
+            <ion-label slot="end">15000</ion-label>
+          </ion-range>
+        </ion-item>
+
+      
+    </ion-list>
+
+<br> <br>
+
+    <ion-button color="secondary" (click)= "searchHospital()" expand="block">Search Hospitals</ion-button>
+
+  </ion-content>
+</ion-app>

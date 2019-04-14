@@ -1,0 +1,7 @@
+{
+  "name": "goFourIt",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
