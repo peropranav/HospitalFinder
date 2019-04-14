@@ -15,3 +15,13 @@ The last but not least , the app is built on Ionic v4.
 - Fire up node server using cmd. - node app.js
 - Build the app , ionic cordova build android 
 - Emulate the apk generated.
+
+### Screenshots
+
+ ![alt text](https://github.com/peropranav/HospitalFinder/blob/master/screenshots/WhatsApp%20Image%202019-04-11%20at%2011.24.42%20PM.jpeg)
+ 
+![alt text](https://github.com/peropranav/HospitalFinder/blob/master/screenshots/images%20at%203.59.17%20PM.jpeg)
+
+![alt text](https://github.com/peropranav/HospitalFinder/blob/master/screenshots/images%20at%203.59.17%20PM.jpeg)
+
+![alt text](https://github.com/peropranav/HospitalFinder/blob/master/screenshots/images%20at%204.01.33%20PM.jpeg)
