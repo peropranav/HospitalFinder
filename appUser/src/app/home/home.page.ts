@@ -31,12 +31,11 @@ export class HomePage {
     }
   searchHospital()
   { 
-
-    this.appService.presentLoading();
+    //this.appService.presentLoading();
     console.log(this.maxDist + " " + this.ageGroup + " " + this.disease_cure);
 
     this.geolocation.getCurrentPosition().then((resp) => {
-      // resp.coords.latitude
+                  // resp.coords.latitude
       // resp.coords.longitude
       //alert(resp.coords.latitude + " " + resp.coords.longitude);
 
@@ -49,9 +48,8 @@ export class HomePage {
       this.geoLat = resp.coords.latitude;
       this.geoLong = resp.coords.longitude;
 console.log("hello");
-//alert(this.geoLat + " " + this.geoLong);
     this.http.post('http://192.168.43.12:8080/searchHospitals',
-   //   this.http.post('http://10.0.0.2:8080/searchHospitals',
+     // this.http.post('http://10.0.0.2:8080/searchHospitals',
    // this.http.post('http://localhost:8080/searchHospitals', 
       {
         "geoLat":this.geoLat,

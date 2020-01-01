@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { AppServiceService } from '../app-service.service';
 
 @Component({
   selector: 'app-customized-search',
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./customized-search.page.scss'],
 })
 export class CustomizedSearchPage implements OnInit {
-  constructor(private http:HttpClient, private router: Router) { }
+  constructor(private http:HttpClient, private router: Router, private appService:AppServiceService) { }
 
   maxDist = 1000;
   ageGroup = "";
@@ -32,6 +33,8 @@ export class CustomizedSearchPage implements OnInit {
 
   searchCordsForCustomAddress()
   {
+    this.appService.presentLoading();
+
     if(this.area.length <= 0)
     {
       alert("area cannot be empty");
@@ -39,10 +42,10 @@ export class CustomizedSearchPage implements OnInit {
     }
     //console.log(this.area);
 
-    this.http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.area}&key= AIzaSyC-kdT_jTgRlBUWauqSuFHl69ddNXVhO8k`)
+    this.http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.area}&key=AIzaSyCSDstn-0znijDm9OVbWiEAdit9DfBXePQ`)
     .subscribe((result:any)=>
     {
-      // console.log(result);
+      console.log(result);
       this.customLat = result.results[0].geometry.location.lat;
       this.customLng = result.results[0].geometry.location.lng;
       console.log(result.results[0].geometry.location.lat);
@@ -58,7 +61,7 @@ export class CustomizedSearchPage implements OnInit {
   searchHospitals()
   {
     this.http.post('http://192.168.43.12:8080/searchHospitals',
-    //   this.http.post('http://10.0.0.2:8080/searchHospitals',
+     // this.http.post('http://10.0.0.2:8080/searchHospitals',
     // this.http.post('http://localhost:8080/searchHospitals', 
        {
          "geoLat":this.customLat,

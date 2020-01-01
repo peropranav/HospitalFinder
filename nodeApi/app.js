@@ -9,6 +9,7 @@ var finalPath = path.join(__dirname + '/public/dist');
 app.use(express.static(finalPath)); //Serves resources from public folder
 app.use(express.static(__dirname + './public')); //Serves resources from public folder
 app.use(cors());
+app.options('*', cors());
 var searchHospitals = require('./routes/searchHospitals');
 var addHospitals = require('./routes/addHospitals');
 var authRoute = require('./routes/authRoutes');
@@ -34,6 +35,7 @@ app.use(bodyParser.urlencoded({
 //using middleware
 app.use('/searchHospitals', searchHospitals);
 app.use('/addHospitals',addHospitals);
+app.use('/authCheck' , authRoute );
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

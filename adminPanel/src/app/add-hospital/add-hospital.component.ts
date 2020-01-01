@@ -36,7 +36,7 @@ export class AddHospitalComponent implements OnInit {
   addHospital()
   {
 //console.log(this.hospitalName + " " + this.hospitalAddress + " " + this.hospitalSpeciality + " " + this.hospitalPhoneNumber);
-this.httpClient.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.hospitalAddress}&key= AIzaSyC-kdT_jTgRlBUWauqSuFHl69ddNXVhO8k`)
+this.httpClient.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.hospitalAddress}&key=AIzaSyCSDstn-0znijDm9OVbWiEAdit9DfBXePQ`)
 .subscribe((result:any)=>
   {
     console.log(result);
